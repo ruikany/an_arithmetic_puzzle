@@ -1,0 +1,4 @@
+(executable
+ (public_name an_arithmetic_puzzle)
+ (name main)
+ (libraries an_arithmetic_puzzle))

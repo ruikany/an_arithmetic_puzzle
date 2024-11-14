@@ -1,0 +1,6 @@
+# dune init proj an_arithmetic_puzzle
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/zuodu1/.cache/dune/db
+# Workspace root: /home/zuodu1/an_arithmetic_puzzle
+# Auto-detected concurrency: 8
