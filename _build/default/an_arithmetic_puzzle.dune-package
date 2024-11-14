@@ -1,0 +1,7 @@
+(lang dune 3.16)
+(name an_arithmetic_puzzle)
+(sections (lib .) (bin ../../bin) (doc ../../doc/an_arithmetic_puzzle))
+(files
+ (lib (META dune-package opam))
+ (bin (an_arithmetic_puzzle))
+ (doc (README.md)))
