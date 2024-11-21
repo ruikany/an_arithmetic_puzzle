@@ -1,16 +1,13 @@
-(* defining operation as the 4 common operators *)
 type op =
   | Plus
   | Minus
   | Mult
   | Div
 
-(* exp as a constant or as a binary operation *)
 type exp =
   | Const of int
   | Binary of exp * op * exp
 
-type equation = exp * exp
 
 let apply (op : op) (x : float) (y : float) : float option = match op with
   | Plus -> Some (x +. y)
@@ -19,22 +16,18 @@ let apply (op : op) (x : float) (y : float) : float option = match op with
   | Div when y = 0.0 -> None
   | Div -> Some (x /. y)
 
-(* add parentheses if needed *)
 let addParen (b : bool) (s : string) : string = if b then "(" ^ s ^ ")" else s
 
-(* sets lower precedence for add, sub*)
 let precedence (op : op) : int = match op with
   | Plus | Minus -> 1
   | Mult | Div -> 2
 
-(* op to string version *)
 let opToStr (op : op) : string = match op with
   | Plus -> " + "
   | Minus -> " - "
   | Mult -> " * "
   | Div -> " / "
 
-(* converts exp into string *)
 let rec expToStr (p : int) (e : exp) : string = match e with
   | Const n -> string_of_int n
   | Binary (e1, op, e2) ->
